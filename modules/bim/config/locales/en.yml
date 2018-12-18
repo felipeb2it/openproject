@@ -1,0 +1,14 @@
+# English strings go here for Rails i18n
+en:
+  bim:
+    label_bim: 'BIM'
+    linked_issues: "Linked issues"
+    bcf:
+      xml_file: 'BCF XML File'
+      import: 'Import from BCF'
+      import_failed: 'Cannot import BCF file: %{error}'
+      import_successful: 'Imported %{count} BCF issues'
+
+  export:
+    format:
+      bcf: "BCF-XML"

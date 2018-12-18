@@ -78,14 +78,14 @@ GIT
 PATH
   remote: modules/auth_plugins
   specs:
-    openproject-auth_plugins (8.2.0)
+    openproject-auth_plugins (8.2.1)
       omniauth (~> 1.0)
       rails (~> 5.0)
 
 PATH
   remote: modules/avatars
   specs:
-    openproject-avatars (8.2.0)
+    openproject-avatars (8.2.1)
       fastimage (~> 2.1.0)
       gravatar_image_tag (~> 1.2.0)
       rails (~> 5.0)
@@ -93,47 +93,55 @@ PATH
 PATH
   remote: modules/backlogs
   specs:
-    openproject-backlogs (8.2.0)
+    openproject-backlogs (8.2.1)
       acts_as_silent_list (~> 3.0.0)
-      openproject-pdf_export (= 8.2.0)
+      openproject-pdf_export (= 8.2.1)
+
+PATH
+  remote: modules/bim
+  specs:
+    openproject-bim (8.2.1)
+      activerecord-import
+      rails (~> 5)
+      rubyzip (~> 1.2)
 
 PATH
   remote: modules/costs
   specs:
-    openproject-costs (8.2.0)
+    openproject-costs (8.2.1)
 
 PATH
   remote: modules/documents
   specs:
-    openproject-documents (8.2.0)
+    openproject-documents (8.2.1)
 
 PATH
   remote: modules/github_integration
   specs:
-    openproject-github_integration (8.2.0)
+    openproject-github_integration (8.2.1)
       openproject-webhooks
       rails (~> 5.0)
 
 PATH
   remote: modules/global_roles
   specs:
-    openproject-global_roles (8.2.0)
+    openproject-global_roles (8.2.1)
 
 PATH
   remote: modules/meeting
   specs:
-    openproject-meeting (8.2.0)
+    openproject-meeting (8.2.1)
       icalendar (~> 2.3.0)
 
 PATH
   remote: modules/my_project_page
   specs:
-    openproject-my_project_page (8.2.0)
+    openproject-my_project_page (8.2.1)
 
 PATH
   remote: modules/openid_connect
   specs:
-    openproject-openid_connect (8.2.0)
+    openproject-openid_connect (8.2.1)
       lobby_boy (~> 0.1.3)
       omniauth-openid_connect-providers (~> 0.1)
       openproject-auth_plugins (~> 8.0)
@@ -142,29 +150,29 @@ PATH
 PATH
   remote: modules/pdf_export
   specs:
-    openproject-pdf_export (8.2.0)
+    openproject-pdf_export (8.2.1)
       pdf-inspector (~> 1.3.0)
       prawn (~> 2.2)
 
 PATH
   remote: modules/reporting_engine
   specs:
-    reporting_engine (8.2.0)
+    reporting_engine (8.2.1)
       json
       rails (~> 5.1.0)
 
 PATH
   remote: modules/reporting
   specs:
-    openproject-reporting (8.2.0)
+    openproject-reporting (8.2.1)
       jquery-tablesorter (~> 1.25.5)
-      openproject-costs (= 8.2.0)
+      openproject-costs (= 8.2.1)
       reporting_engine (>= 1.1.0)
 
 PATH
   remote: modules/two_factor_authentication
   specs:
-    openproject-two_factor_authentication (8.2.0)
+    openproject-two_factor_authentication (8.2.1)
       aws-sdk-sns (~> 1.1.0)
       messagebird-rest (~> 1.3.2)
       rails (~> 5)
@@ -173,13 +181,13 @@ PATH
 PATH
   remote: modules/webhooks
   specs:
-    openproject-webhooks (8.2.0)
+    openproject-webhooks (8.2.1)
       rails (~> 5.0)
 
 PATH
   remote: modules/xls_export
   specs:
-    openproject-xls_export (8.2.0)
+    openproject-xls_export (8.2.1)
       spreadsheet (~> 0.8.9)
 
 GEM
@@ -227,6 +235,8 @@ GEM
       activemodel (= 5.1.6.1)
       activesupport (= 5.1.6.1)
       arel (~> 8.0)
+    activerecord-import (0.28.0)
+      activerecord (>= 3.2)
     activerecord-session_store (1.1.1)
       actionpack (>= 4.0)
       activerecord (>= 4.0)
@@ -886,6 +896,7 @@ DEPENDENCIES
   openproject-auth_plugins!
   openproject-avatars!
   openproject-backlogs!
+  openproject-bim!
   openproject-costs!
   openproject-documents!
   openproject-github_integration!

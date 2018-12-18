@@ -1,0 +1,43 @@
+<%= stylesheet_link_tag 'bim/bim.css' %>
+
+<%= toolbar title: t('bim.linked_issues'), html: {class: '-with-dropdown'} do %>
+  <li class="toolbar-item drop-down">
+    <a href="#" aria-haspopup="true" title="<%= t(:label_more) %>" class="button">
+      <span class="button--text"><%= t(:label_more) %></span>
+      <%= op_icon('button--dropdown-indicator') %>
+    </a>
+    <ul style="display:none;" class="menu-drop-down-container">
+        <li>
+          <%= link_to I18n.t(:label_import),
+                      { action: 'import' },
+                      title: I18n.t(:label_import),
+                      class: 'icon-context icon-import' %>
+        </li>
+    </ul>
+  </li>
+<% end %>
+
+<% if @issues.present? %>
+  <div class="bim--bcf-issues">
+    <% @issues.each do |issue| %>
+      <div>
+        <p>
+        <strong><%= issue.title %></strong>
+        <br/>
+        <span><%= issue.description %></span>
+        <% if issue.work_package %>
+        <br/>
+        <span>Linked to work package <%= link_to_work_package(issue.work_package) %></span>
+        <% end %>
+        </p>
+        <% issue.viewpoints.each do |vp| %>
+          <img src="<%= attachment_path(vp.snapshot.id) %>" />
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <%= no_results_box %>
+<% end %>
+
+<%= pagination_links_full @issues %>
